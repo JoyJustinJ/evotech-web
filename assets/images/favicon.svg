@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" fill="none">
+  <defs>
+    <!-- Background Gradient for Badge -->
+    <linearGradient id="favBadgeBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a101f"/>
+      <stop offset="50%" stop-color="#080c18"/>
+      <stop offset="100%" stop-color="#030509"/>
+    </linearGradient>
+
+    <!-- Neon Cyan to Cobalt Gradient -->
+    <linearGradient id="favEvoCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f2fe"/>
+      <stop offset="35%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#2563eb"/>
+    </linearGradient>
+
+    <!-- Soft Glass Gradient Fill -->
+    <linearGradient id="favGlassFill" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f2fe" stop-opacity="0.22"/>
+      <stop offset="50%" stop-color="#38bdf8" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#2563eb" stop-opacity="0.28"/>
+    </linearGradient>
+
+    <!-- Glowing Drop Shadow Filter -->
+    <filter id="favNeonGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="1.5" flood-color="#00f2fe" flood-opacity="0.7"/>
+    </filter>
+  </defs>
+
+  <!-- Background squircle -->
+  <rect x="2" y="2" width="44" height="44" rx="12" fill="url(#favBadgeBg)" stroke="url(#favEvoCyan)" stroke-width="1.6"/>
+  <rect x="2" y="2" width="44" height="44" rx="12" fill="url(#favEvoCyan)" opacity="0.1"/>
+
+  <!-- Logo Mark -->
+  <g filter="url(#favNeonGlow)">
+    <!-- Main "E" Forward Arrow Block -->
+    <path fill-rule="evenodd" clip-rule="evenodd"
+          d="M8 9H24L31.5 24L24 39H8V9ZM13 14H21.5L25 21H13V14ZM13 27H25L21.5 34H13V27Z"
+          fill="url(#favGlassFill)"
+          stroke="url(#favEvoCyan)"
+          stroke-width="1.8"
+          stroke-linejoin="round"/>
+
+    <!-- Parallel Chevron Wing (>> Evolution) -->
+    <path d="M28.5 9H32.5L40 24L32.5 39H28.5L36 24L28.5 9Z"
+          fill="url(#favGlassFill)"
+          stroke="url(#favEvoCyan)"
+          stroke-width="1.8"
+          stroke-linejoin="round"/>
+
+    <!-- Specular Highlight Points -->
+    <circle cx="8" cy="9" r="1.3" fill="#ffffff"/>
+    <circle cx="31.5" cy="24" r="1.4" fill="#00f2fe"/>
+    <circle cx="40" cy="24" r="1.4" fill="#ffffff"/>
+  </g>
+</svg>

@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects Portfolio | EvoTech</title>
+  <meta name="description" content="Explore custom web applications, e-commerce storefronts, and digital platforms engineered by EvoTech.">
+  <meta name="keywords" content="Portfolio, Web Development Projects, Next.js Projects, React Apps, EvoTech Case Studies">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  
+  <!-- Google Fonts: Kumbh Sans & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Custom Mouse Cursor -->
+  <div class="mouse-cursor cursor-outer"></div>
+  <div class="mouse-cursor cursor-inner"></div>
+
+  <!-- Top Header Area -->
+  <div class="header-top">
+    <div class="container">
+      <div class="header-top-wrp">
+        <ul class="info">
+          <li>
+            <i class="fa-regular fa-envelope"></i>
+            <a href="mailto:evotech.work@gmail.com">evotech.work@gmail.com</a>
+          </li>
+          <li>
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Krishnagiri, Tamil Nadu, India</span>
+          </li>
+        </ul>
+        <ul class="link-info">
+          <li><a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a></li>
+          <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
+          <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a></li>
+          <li><a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Header Area -->
+  <header class="header-area">
+    <div class="container">
+      <div class="header__main">
+        <a href="index.html" class="logo" id="brand-logo">
+          <div class="logo-badge">
+            <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M4 5H18L24.5 18L18 31H4V5ZM8.5 9.5H16L19 15.5H8.5V9.5ZM8.5 20.5H19L16 26.5H8.5V20.5Z" fill="rgba(0, 242, 254, 0.22)" stroke="#00f2fe" stroke-width="1.6" stroke-linejoin="round"/>
+              <path d="M22 5H25.5L32 18L25.5 31H22L28.5 18L22 5Z" fill="rgba(0, 242, 254, 0.22)" stroke="#00f2fe" stroke-width="1.6" stroke-linejoin="round"/>
+              <circle cx="24.5" cy="18" r="1.2" fill="#ffffff"/>
+              <circle cx="32" cy="18" r="1.2" fill="#00f2fe"/>
+            </svg>
+          </div>
+          <span class="logo-text">EVO<span>TECH</span></span>
+        </a>
+
+        <div class="main-menu">
+          <nav>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="projects.html" class="active">Projects</a></li>
+              <li><a href="team.html">Our Team</a></li>
+              <li><a href="testimonials.html">Testimonials</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="header-actions">
+          <button class="btn-one open-quote-modal" id="nav-quote-btn">
+            <span>Get A Quote</span>
+            <i class="fa-regular fa-arrow-right-long"></i>
+          </button>
+          <button class="mobile-menu-btn" id="openButton" aria-label="Open Navigation Menu">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Sidebar Drawer -->
+  <div class="sidebar-overlay"></div>
+  <aside class="sidebar-area" id="targetElement">
+    <button class="sidebar-close-btn" id="closeButton" aria-label="Close Navigation Menu">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <div class="logo mb-30" style="display:flex; align-items:center; gap:10px;">
+      <div class="logo-badge" style="width:38px; height:38px;">
+        <svg viewBox="0 0 36 36" width="22" height="22" fill="none">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M4 5H18L24.5 18L18 31H4V5ZM8.5 9.5H16L19 15.5H8.5V9.5ZM8.5 20.5H19L16 26.5H8.5V20.5Z" fill="rgba(0, 242, 254, 0.22)" stroke="#00f2fe" stroke-width="1.6" stroke-linejoin="round"/>
+          <path d="M22 5H25.5L32 18L25.5 31H22L28.5 18L22 5Z" fill="rgba(0, 242, 254, 0.22)" stroke="#00f2fe" stroke-width="1.6" stroke-linejoin="round"/>
+          <circle cx="24.5" cy="18" r="1.2" fill="#ffffff"/>
+          <circle cx="32" cy="18" r="1.2" fill="#00f2fe"/>
+        </svg>
+      </div>
+      <span class="logo-text" style="font-size:20px;">EVO<span>TECH</span></span>
+    </div>
+    <div class="sidebar-menu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="team.html">Our Team</a></li>
+        <li><a href="testimonials.html">Testimonials</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <ul class="sidebar-contact">
+      <li><i class="fa-regular fa-envelope"></i> evotech.work@gmail.com</li>
+      <li><i class="fa-solid fa-location-dot"></i> Krishnagiri, Tamil Nadu, India</li>
+    </ul>
+  </aside>
+
+  <main>
+    <!-- SUBPAGE HERO -->
+    <section class="subpage-hero">
+      <div class="container">
+        <div class="breadcrumb-nav">
+          <a href="index.html">Home</a>
+          <span>/</span>
+          <span class="breadcrumb-current">Projects</span>
+        </div>
+        <h1 class="subpage-title">Selected Projects Built For Measurable Growth</h1>
+        <p class="subpage-desc">
+          Every project we undertake is engineered with real commercial intent. Browse our recent work spanning modern e-commerce storefronts, real-time booking engines, restaurant systems, and enterprise portals.
+        </p>
+      </div>
+    </section>
+
+    <!-- PROJECTS GALLERY -->
+    <section class="projects-area pt-120 pb-120">
+      <div class="container">
+        
+        <!-- Filter Tabs -->
+        <div class="projects-filter-bar">
+          <button class="filter-tab-btn active" data-filter="all">All Projects (4)</button>
+          <button class="filter-tab-btn" data-filter="ecommerce">E-Commerce</button>
+          <button class="filter-tab-btn" data-filter="hospitality">Hospitality &amp; Travel</button>
+          <button class="filter-tab-btn" data-filter="restaurant">Food &amp; Dining</button>
+          <button class="filter-tab-btn" data-filter="corporate">Corporate &amp; Portal</button>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Project 1: Santosh Lifestyle -->
+          <div class="project-card" data-project-id="santosh" data-category="ecommerce">
+            <div class="project-thumb-box">
+              <img src="assets/images/project-santosh.jpg" alt="Santosh Lifestyle E-commerce Preview" class="project-img" loading="lazy">
+            </div>
+            <div class="project-info-box">
+              <h3 class="project-title">Santosh Lifestyle</h3>
+              <p class="project-subtitle">E-commerce &amp; Scheme App</p>
+              <div class="project-tags-row">
+                <div class="tags-left">
+                  <span class="tech-tag">Next.js</span>
+                  <span class="tech-tag">Razorpay</span>
+                  <span class="tech-tag">Vercel</span>
+                </div>
+                <div class="project-card-arrow">
+                  <i class="fa-solid fa-arrow-right"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2: Serene Hills Resort -->
+          <div class="project-card" data-project-id="serene" data-category="hospitality">
+            <div class="project-thumb-box">
+              <img src="assets/images/project-serene.jpg" alt="Serene Hills Resort Website Preview" class="project-img" loading="lazy">
+            </div>
+            <div class="project-info-box">
+              <h3 class="project-title">Serene Hills Resort</h3>
+              <p class="project-subtitle">Resort Website + Booking Engine</p>
+              <div class="project-tags-row">
+                <div class="tags-left">
+                  <span class="tech-tag">Next.js</span>
+                  <span class="tech-tag">Firebase</span>
+                  <span class="tech-tag">PMS</span>
+                </div>
+                <div class="project-card-arrow">
+                  <i class="fa-solid fa-arrow-right"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3: SpiceWood Restaurant -->
+          <div class="project-card" data-project-id="spicewood" data-category="restaurant">
+            <div class="project-thumb-box">
+              <img src="assets/images/project-spicewood.jpg" alt="SpiceWood Restaurant Website Preview" class="project-img" loading="lazy">
+            </div>
+            <div class="project-info-box">
+              <h3 class="project-title">SpiceWood Restaurant</h3>
+              <p class="project-subtitle">Business Website + Google Maps</p>
+              <div class="project-tags-row">
+                <div class="tags-left">
+                  <span class="tech-tag">React</span>
+                  <span class="tech-tag">SEO</span>
+                  <span class="tech-tag">Domain</span>
+                </div>
+                <div class="project-card-arrow">
+                  <i class="fa-solid fa-arrow-right"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4: Arshith Group -->
+          <div class="project-card" data-project-id="arshith" data-category="corporate">
+            <div class="project-thumb-box">
+              <img src="assets/images/project-arshith.jpg" alt="Arshith Group Corporate Website Preview" class="project-img" loading="lazy">
+            </div>
+            <div class="project-info-box">
+              <h3 class="project-title">Arshith Group</h3>
+              <p class="project-subtitle">Company Website &amp; Portal</p>
+              <div class="project-tags-row">
+                <div class="tags-left">
+                  <span class="tech-tag">Next.js</span>
+                  <span class="tech-tag">Tailwind</span>
+                  <span class="tech-tag">CMS</span>
+                </div>
+                <div class="project-card-arrow">
+                  <i class="fa-solid fa-arrow-right"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer-area secondary-bg pt-100">
+    <div class="container">
+      <div class="footer-top-cta">
+        <div class="footer-cta-left">
+          <h3>Let's Build Something Great Together</h3>
+          <p>Tell us about your project and get a free technical roadmap and quote within 24 hours.</p>
+        </div>
+        <div style="display:flex; align-items:center; gap:14px; flex-wrap:wrap;">
+          <button class="btn-one open-quote-modal" style="background:#ffffff; color:#0f0d1d;">
+            <span>Get A Free Quote</span>
+            <i class="fa-regular fa-arrow-right-long"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="footer__wrp pb-100">
+        <div>
+          <a href="index.html" class="footer-logo">
+            <div class="logo-badge" style="width:38px; height:38px;">
+              <svg viewBox="0 0 36 36" width="22" height="22" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M4 5H18L24.5 18L18 31H4V5ZM8.5 9.5H16L19 15.5H8.5V9.5ZM8.5 20.5H19L16 26.5H8.5V20.5Z" fill="rgba(0, 242, 254, 0.22)" stroke="#00f2fe" stroke-width="1.6" stroke-linejoin="round"/>
+                <path d="M22 5H25.5L32 18L25.5 31H22L28.5 18L22 5Z" fill="rgba(0, 242, 254, 0.22)" stroke="#00f2fe" stroke-width="1.6" stroke-linejoin="round"/>
+                <circle cx="24.5" cy="18" r="1.2" fill="#ffffff"/>
+                <circle cx="32" cy="18" r="1.2" fill="#00f2fe"/>
+              </svg>
+            </div>
+            <span class="logo-text" style="font-size:20px;">EVO<span>TECH</span></span>
+          </a>
+          <p class="footer-about-text">
+            Empowering businesses with custom software development, modern web applications, creative branding, and data-driven digital engineering.
+          </p>
+          <div class="footer-social-row">
+            <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="footer-title">Services</h3>
+          <ul class="footer-nav-list">
+            <li><a href="services.html#service-web"><i class="fa-solid fa-angles-right"></i> Website Development</a></li>
+            <li><a href="services.html#service-webapp"><i class="fa-solid fa-angles-right"></i> Web Applications</a></li>
+            <li><a href="services.html#service-mobile"><i class="fa-solid fa-angles-right"></i> Mobile Apps</a></li>
+            <li><a href="services.html#service-uiux"><i class="fa-solid fa-angles-right"></i> Graphic &amp; UI/UX Design</a></li>
+            <li><a href="services.html#service-seo"><i class="fa-solid fa-angles-right"></i> Digital Marketing &amp; SEO</a></li>
+            <li><a href="services.html#service-hosting"><i class="fa-solid fa-angles-right"></i> Hosting &amp; Cloud IT</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="footer-title">Quick Links</h3>
+          <ul class="footer-nav-list">
+            <li><a href="about.html"><i class="fa-solid fa-angles-right"></i> About Us</a></li>
+            <li><a href="services.html"><i class="fa-solid fa-angles-right"></i> Services</a></li>
+            <li><a href="projects.html"><i class="fa-solid fa-angles-right"></i> Projects Portfolio</a></li>
+            <li><a href="team.html"><i class="fa-solid fa-angles-right"></i> Our Team</a></li>
+            <li><a href="testimonials.html"><i class="fa-solid fa-angles-right"></i> Testimonials</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-angles-right"></i> Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="footer-title">Contact Us</h3>
+          <ul class="footer-contact-list">
+            <li>
+              <i class="fa-solid fa-location-dot"></i>
+              <div class="info">
+                <h5>Office Location:</h5>
+                <p>Krishnagiri, Tamil Nadu,<br>India - 635001</p>
+              </div>
+            </li>
+            <li>
+              <i class="fa-solid fa-envelope"></i>
+              <div class="info">
+                <h5>Email Address:</h5>
+                <p><a href="mailto:evotech.work@gmail.com">evotech.work@gmail.com</a></p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__copyright">
+      <div class="container footer__copyright-inner">
+        <p>&copy; All Copyright 2026 by <a href="index.html" style="color:var(--white);">EvoTech</a></p>
+        <ul class="footer-policy-links">
+          <li><a href="#0">Terms &amp; Condition</a></li>
+          <li><a href="#0">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Up Button -->
+  <div class="scroll-up">
+    <svg class="scroll-circle" width="100%" height="100%" viewBox="-1 -1 102 102">
+      <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+    </svg>
+    <i class="fa-solid fa-arrow-up"></i>
+  </div>
+
+  <!-- MODAL: GET A QUOTE -->
+  <div class="modal-backdrop" id="quote-modal" role="dialog" aria-modal="true">
+    <div class="modal-card">
+      <button class="modal-close-btn" id="close-quote-modal" aria-label="Close modal">&times;</button>
+      <div class="modal-header">
+        <h3>Get a Free Project Quote</h3>
+        <p>Tell us about your requirements and our team will get back to you with an estimate within 24 hours.</p>
+      </div>
+      <form class="modal-form" id="quote-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="quote-name">Full Name *</label>
+            <input type="text" id="quote-name" required placeholder="e.g. Rahul Sharma">
+          </div>
+          <div class="form-group">
+            <label for="quote-email">Email Address *</label>
+            <input type="email" id="quote-email" required placeholder="e.g. rahul@example.com">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="quote-service">Service Required *</label>
+          <select id="quote-service" required>
+            <option value="">Select a service...</option>
+            <option value="website">Website Development</option>
+            <option value="webapp">Web Application</option>
+            <option value="mobile">Mobile App Development</option>
+            <option value="uiux">Graphic Design &amp; UI/UX</option>
+            <option value="seo">Digital Marketing &amp; SEO</option>
+            <option value="hosting">Hosting &amp; Cloud IT</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="quote-message">Project Overview *</label>
+          <textarea id="quote-message" rows="3" required placeholder="Describe your business goals, required features, and timeline..."></textarea>
+        </div>
+        <div style="margin-top: 10px;">
+          <button type="submit" class="btn-one" style="width: 100%; justify-content: center;">
+            <span>Submit Project Request</span>
+            <i class="fa-regular fa-arrow-right-long"></i>
+          </button>
+        </div>
+      </form>
+      <div class="form-success-msg" id="quote-success-msg" style="display:none; text-align:center; padding:20px 0;">
+        <i class="fa-solid fa-circle-check" style="color:#10b981; font-size:48px; margin-bottom:14px;"></i>
+        <h4 style="font-size:20px; font-weight:700; margin-bottom:8px;">Thank You!</h4>
+        <p style="color:#64748b; font-size:14.5px;">Your quote request has been received. Our team will contact you shortly.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: PROJECT DETAIL LIGHTBOX -->
+  <div class="modal-backdrop" id="project-modal" role="dialog" aria-modal="true">
+    <div class="modal-card modal-large">
+      <button class="modal-close-btn" id="close-project-modal" aria-label="Close modal">&times;</button>
+      <div id="project-modal-content"></div>
+    </div>
+  </div>
+
+  <div class="toast-notification" id="toast-notify"></div>
+  <script src="script.js"></script>
+</body>
+</html>

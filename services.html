@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IT &amp; Web Services | EvoTech</title>
+  <meta name="description" content="Explore end-to-end digital services by EvoTech: Website Development, Web Applications, Mobile Apps, UI/UX Design, and Digital Marketing.">
+  <meta name="keywords" content="Website Development, Web Applications, Mobile App Development, UI/UX Design, SEO Services, IT Services, EvoTech">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  
+  <!-- Google Fonts: Kumbh Sans & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Custom Mouse Cursor -->
+  <div class="mouse-cursor cursor-outer"></div>
+  <div class="mouse-cursor cursor-inner"></div>
+
+  <!-- Top Header Area -->
+  <div class="header-top">
+    <div class="container">
+      <div class="header-top-wrp">
+        <ul class="info">
+          <li>
+            <i class="fa-regular fa-envelope"></i>
+            <a href="mailto:evotech.work@gmail.com">evotech.work@gmail.com</a>
+          </li>
+          <li>
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Krishnagiri, Tamil Nadu, India</span>
+          </li>
+        </ul>
+        <ul class="link-info">
+          <li><a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a></li>
+          <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
+          <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a></li>
+          <li><a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Header Area -->
+  <header class="header-area">
+    <div class="container">
+      <div class="header__main">
+        <a href="index.html" class="logo" id="brand-logo">
+          <div class="logo-badge">
+            <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M4 5H18L24.5 18L18 31H4V5ZM8.5 9.5H16L19 15.5H8.5V9.5ZM8.5 20.5H19L16 26.5H8.5V20.5Z" fill="rgba(0, 242, 254, 0.22)" stroke="#00f2fe" stroke-width="1.6" stroke-linejoin="round"/>
+              <path d="M22 5H25.5L32 18L25.5 31H22L28.5 18L22 5Z" fill="rgba(0, 242, 254, 0.22)" stroke="#00f2fe" stroke-width="1.6" stroke-linejoin="round"/>
+              <circle cx="24.5" cy="18" r="1.2" fill="#ffffff"/>
+              <circle cx="32" cy="18" r="1.2" fill="#00f2fe"/>
+            </svg>
+          </div>
+          <span class="logo-text">EVO<span>TECH</span></span>
+        </a>
+
+        <div class="main-menu">
+          <nav>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="services.html" class="active">Services</a></li>
+              <li><a href="projects.html">Projects</a></li>
+              <li><a href="team.html">Our Team</a></li>
+              <li><a href="testimonials.html">Testimonials</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="header-actions">
+          <button class="btn-one open-quote-modal" id="nav-quote-btn">
+            <span>Get A Quote</span>
+            <i class="fa-regular fa-arrow-right-long"></i>
+          </button>
+          <button class="mobile-menu-btn" id="openButton" aria-label="Open Navigation Menu">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Sidebar Drawer -->
+  <div class="sidebar-overlay"></div>
+  <aside class="sidebar-area" id="targetElement">
+    <button class="sidebar-close-btn" id="closeButton" aria-label="Close Navigation Menu">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <div class="logo mb-30" style="display:flex; align-items:center; gap:10px;">
+      <div class="logo-badge" style="width:38px; height:38px;">
+        <svg viewBox="0 0 36 36" width="22" height="22" fill="none">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M4 5H18L24.5 18L18 31H4V5ZM8.5 9.5H16L19 15.5H8.5V9.5ZM8.5 20.5H19L16 26.5H8.5V20.5Z" fill="rgba(0, 242, 254, 0.22)" stroke="#00f2fe" stroke-width="1.6" stroke-linejoin="round"/>
+          <path d="M22 5H25.5L32 18L25.5 31H22L28.5 18L22 5Z" fill="rgba(0, 242, 254, 0.22)" stroke="#00f2fe" stroke-width="1.6" stroke-linejoin="round"/>
+          <circle cx="24.5" cy="18" r="1.2" fill="#ffffff"/>
+          <circle cx="32" cy="18" r="1.2" fill="#00f2fe"/>
+        </svg>
+      </div>
+      <span class="logo-text" style="font-size:20px;">EVO<span>TECH</span></span>
+    </div>
+    <div class="sidebar-menu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="team.html">Our Team</a></li>
+        <li><a href="testimonials.html">Testimonials</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <ul class="sidebar-contact">
+      <li><i class="fa-regular fa-envelope"></i> evotech.work@gmail.com</li>
+      <li><i class="fa-solid fa-location-dot"></i> Krishnagiri, Tamil Nadu, India</li>
+    </ul>
+  </aside>
+
+  <main>
+    <!-- SUBPAGE HERO -->
+    <section class="subpage-hero">
+      <div class="container">
+        <div class="breadcrumb-nav">
+          <a href="index.html">Home</a>
+          <span>/</span>
+          <span class="breadcrumb-current">Services</span>
+        </div>
+        <h1 class="subpage-title">Digital Solutions Tailored For Real Businesses</h1>
+        <p class="subpage-desc">
+          We provide full-lifecycle technical and design execution. Whether you need a lightning-fast responsive website, a multi-tenant web application, or a complete digital overhaul, we have the expertise to execute flawlessly.
+        </p>
+      </div>
+    </section>
+
+    <!-- DETAILED SERVICES LIST -->
+    <section class="service-area pt-120 pb-100">
+      <div class="container">
+        <div class="service-grid">
+          <!-- 1. Website Development -->
+          <div class="service__item" id="service-web">
+            <div class="service__icon"><i class="fa-solid fa-globe"></i></div>
+            <h4>Website Development</h4>
+            <p>We build bespoke, fast, responsive websites that represent your brand with perfection. Every site is built with modern web standards, optimized for search engines, and engineered to turn visitors into paying clients.</p>
+            <ul style="margin-bottom:20px; font-size:14px; color:#475569; display:flex; flex-direction:column; gap:6px;">
+              <li><i class="fa-solid fa-check text-primary" style="color:var(--primary-color); margin-right:6px;"></i> 100% Mobile &amp; Tablet Responsive</li>
+              <li><i class="fa-solid fa-check text-primary" style="color:var(--primary-color); margin-right:6px;"></i> 90+ Google Core Web Vitals Benchmark</li>
+              <li><i class="fa-solid fa-check text-primary" style="color:var(--primary-color); margin-right:6px;"></i> Next.js, React, HTML5 &amp; Semantic SEO</li>
+            </ul>
+            <button class="btn-one open-quote-modal" style="padding:10px 22px; font-size:14px;">
+              <span>Inquire About Websites</span>
+              <i class="fa-regular fa-arrow-right-long"></i>
+            </button>
+          </div>
+
+          <!-- 2. Web Applications -->
+          <div class="service__item" id="service-webapp">
+            <div class="service__icon"><i class="fa-solid fa-laptop-code"></i></div>
+            <h4>Web Applications</h4>
+            <p>From internal admin dashboards to client-facing web portals and booking engines, we engineer scalable web applications with robust backend logic, reliable database structures, and high security.</p>
+            <ul style="margin-bottom:20px; font-size:14px; color:#475569; display:flex; flex-direction:column; gap:6px;">
+              <li><i class="fa-solid fa-check text-primary" style="color:var(--primary-color); margin-right:6px;"></i> MERN &amp; Full Stack Architecture</li>
+              <li><i class="fa-solid fa-check text-primary" style="color:var(--primary-color); margin-right:6px;"></i> Secure Auth &amp; Role-based Access</li>
+              <li><i class="fa-solid fa-check text-primary" style="color:var(--primary-color); margin-right:6px;"></i> Payment Gateway Processing (Razorpay/Stripe)</li>
+            </ul>
+            <button class="btn-one open-quote-modal" style="padding:10px 22px; font-size:14px;">
+              <span>Inquire About Web Apps</span>
+              <i class="fa-regular fa-arrow-right-long"></i>
+            </button>
+          </div>
+
+          <!-- 3. Mobile App Development -->
+          <div class="service__item" id="service-mobile">
+            <div class="service__icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+            <h4>Mobile App Development</h4>
+            <p>We develop intuitive mobile applications with silky smooth framerates, native hardware access, and offline capabilities. Deliver your products and services directly into your customers' hands.</p>
+            <ul style="margin-bottom:20px; font-size:14px; color:#475569; display:flex; flex-direction:column; gap:6px;">
+              <li><i class="fa-solid fa-check text-primary" style="color:var(--primary-color); margin-right:6px;"></i> Native Android &amp; Cross-Platform</li>
+              <li><i class="fa-solid fa-check text-primary" style="color:var(--primary-color); margin-right:6px;"></i> Push Notifications &amp; Offline Cache</li>
+              <li><i class="fa-solid fa-check text-primary" style="color:var(--primary-color); margin-right:6px;"></i> Play Store Release &amp; Compliance</li>
+            </ul>
+            <button class="btn-one open-quote-modal" style="padding:10px 22px; font-size:14px;">
+              <span>Inquire About Mobile Apps</span>
+              <i class="fa-regular fa-arrow-right-long"></i>
+            </button>
+          </div>
+
+          <!-- 4. Graphic Design & UI/UX -->
+          <div class="service__item" id="service-uiux">
+            <div class="service__icon"><i class="fa-solid fa-pen-nib"></i></div>
+            <h4>Graphic Design &amp; UI/UX</h4>
+            <p>A stunning visual interface combined with effortless navigation. We design intuitive user journeys that reduce friction, communicate value instantly, and delight users across all screen sizes.</p>
+            <ul style="margin-bottom:20px; font-size:14px; color:#475569; display:flex; flex-direction:column; gap:6px;">
+              <li><i class="fa-solid fa-check text-primary" style="color:var(--primary-color); margin-right:6px;"></i> Interactive Wireframes &amp; Figma Prototypes</li>
+              <li><i class="fa-solid fa-check text-primary" style="color:var(--primary-color); margin-right:6px;"></i> Logo, Brand Guide &amp; Marketing Kits</li>
+              <li><i class="fa-solid fa-check text-primary" style="color:var(--primary-color); margin-right:6px;"></i> User Testing &amp; Conversion Optimization</li>
+            </ul>
+            <button class="btn-one open-quote-modal" style="padding:10px 22px; font-size:14px;">
+              <span>Inquire About UI/UX</span>
+              <i class="fa-regular fa-arrow-right-long"></i>
+            </button>
+          </div>
+
+          <!-- 5. Digital Marketing & SEO -->
+          <div class="service__item" id="service-seo">
+            <div class="service__icon"><i class="fa-solid fa-chart-line"></i></div>
+            <h4>Digital Marketing &amp; SEO</h4>
+            <p>Building a great product is only half the battle. We ensure your business is discovered by high-intent local and global buyers through targeted optimization and search visibility.</p>
+            <ul style="margin-bottom:20px; font-size:14px; color:#475569; display:flex; flex-direction:column; gap:6px;">
+              <li><i class="fa-solid fa-check text-primary" style="color:var(--primary-color); margin-right:6px;"></i> On-Page &amp; Technical SEO Optimization</li>
+              <li><i class="fa-solid fa-check text-primary" style="color:var(--primary-color); margin-right:6px;"></i> Google Business Profile / Maps Ranking</li>
+              <li><i class="fa-solid fa-check text-primary" style="color:var(--primary-color); margin-right:6px;"></i> Social Media Creatives &amp; Ad Management</li>
+            </ul>
+            <button class="btn-one open-quote-modal" style="padding:10px 22px; font-size:14px;">
+              <span>Inquire About SEO</span>
+              <i class="fa-regular fa-arrow-right-long"></i>
+            </button>
+          </div>
+
+          <!-- 6. Hosting & Cloud IT -->
+          <div class="service__item" id="service-hosting">
+            <div class="service__icon"><i class="fa-solid fa-server"></i></div>
+            <h4>Hosting &amp; Cloud IT</h4>
+            <p>Eliminate downtime worries. We manage domain configuration, DNS setup, SSL certificates, business email accounts, and fast cloud hosting so your systems run smoothly 24/7.</p>
+            <ul style="margin-bottom:20px; font-size:14px; color:#475569; display:flex; flex-direction:column; gap:6px;">
+              <li><i class="fa-solid fa-check text-primary" style="color:var(--primary-color); margin-right:6px;"></i> Cloud Deployments (AWS, Vercel, VPS)</li>
+              <li><i class="fa-solid fa-check text-primary" style="color:var(--primary-color); margin-right:6px;"></i> Automated Weekly Code &amp; Database Backups</li>
+              <li><i class="fa-solid fa-check text-primary" style="color:var(--primary-color); margin-right:6px;"></i> 24/7 Security Patches &amp; Uptime Alerts</li>
+            </ul>
+            <button class="btn-one open-quote-modal" style="padding:10px 22px; font-size:14px;">
+              <span>Inquire About Hosting</span>
+              <i class="fa-regular fa-arrow-right-long"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- THE ICONIC OFFER SECTION (3D Rotating Icons) -->
+    <section class="offer-area secondary-bg pt-120 pb-120">
+      <div class="container">
+        <div class="section-header" style="text-align: center; margin-bottom: 60px;">
+          <h5>
+            <span class="title-dot"></span>
+            ALL DIGITAL CAPABILITIES
+          </h5>
+          <h2>Everything Your Business Needs to Thrive Online</h2>
+        </div>
+
+        <div class="offer-grid">
+          <a href="#service-web" class="offer__item">
+            <div class="offer__icon"><i class="fa-solid fa-globe"></i></div>
+            <h4>Website</h4>
+          </a>
+          <a href="#service-uiux" class="offer__item">
+            <div class="offer__icon"><i class="fa-solid fa-bezier-curve"></i></div>
+            <h4>Graphic Design</h4>
+          </a>
+          <a href="#service-uiux" class="offer__item">
+            <div class="offer__icon"><i class="fa-solid fa-film"></i></div>
+            <h4>Video Production</h4>
+          </a>
+          <a href="#service-seo" class="offer__item">
+            <div class="offer__icon"><i class="fa-solid fa-chart-simple"></i></div>
+            <h4>Digital Marketing</h4>
+          </a>
+          <a href="#service-webapp" class="offer__item">
+            <div class="offer__icon"><i class="fa-solid fa-laptop-code"></i></div>
+            <h4>Custom Software</h4>
+          </a>
+          <a href="#service-hosting" class="offer__item">
+            <div class="offer__icon"><i class="fa-solid fa-network-wired"></i></div>
+            <h4>Hosting &amp; IT</h4>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS AREA -->
+    <section class="process-area pt-120 pb-120">
+      <div class="container">
+        <div class="section-header" style="text-align: center; margin-bottom: 60px;">
+          <h5>
+            <span class="title-dot"></span>
+            OUR WORK PROCESS
+          </h5>
+          <h2>From Concept to Deployment in 3 Structured Steps</h2>
+        </div>
+
+        <div class="process-grid">
+          <div class="process__item">
+            <div class="process__badge-box">
+              <div class="process__circle"><i class="fa-solid fa-lightbulb"></i></div>
+              <span class="process-number">1</span>
+            </div>
+            <div class="process__content">
+              <h4>Discovery &amp; Architecture</h4>
+              <p>We analyze your business objectives, workflows, and user needs to construct a clear technical blueprint and timeline.</p>
+            </div>
+            <div class="process-arrow-line">
+              <svg width="40" height="20" viewBox="0 0 40 20" fill="none"><path d="M0 10 H35 M30 5 L35 10 L30 15" stroke="#3c72fc" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+          </div>
+
+          <div class="process__item">
+            <div class="process__badge-box">
+              <div class="process__circle"><i class="fa-solid fa-code"></i></div>
+              <span class="process-number">2</span>
+            </div>
+            <div class="process__content">
+              <h4>Design &amp; Engineering</h4>
+              <p>Our engineers craft intuitive UI layouts, write clean modular code, integrate secure APIs, and run thorough QA test suites.</p>
+            </div>
+            <div class="process-arrow-line">
+              <svg width="40" height="20" viewBox="0 0 40 20" fill="none"><path d="M0 10 H35 M30 5 L35 10 L30 15" stroke="#3c72fc" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+          </div>
+
+          <div class="process__item">
+            <div class="process__badge-box">
+              <div class="process__circle"><i class="fa-solid fa-rocket"></i></div>
+              <span class="process-number">3</span>
+            </div>
+            <div class="process__content">
+              <h4>Deployment &amp; Support</h4>
+              <p>We deploy your application seamlessly onto secure production cloud servers, ensuring speed, security, and continuous support.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer-area secondary-bg pt-100">
+    <div class="container">
+      <div class="footer-top-cta">
+        <div class="footer-cta-left">
+          <h3>Let's Build Something Great Together</h3>
+          <p>Tell us about your project and get a free technical roadmap and quote within 24 hours.</p>
+        </div>
+        <div style="display:flex; align-items:center; gap:14px; flex-wrap:wrap;">
+          <button class="btn-one open-quote-modal" style="background:#ffffff; color:#0f0d1d;">
+            <span>Get A Free Quote</span>
+            <i class="fa-regular fa-arrow-right-long"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="footer__wrp pb-100">
+        <div>
+          <a href="index.html" class="footer-logo">
+            <div class="logo-badge" style="width:38px; height:38px;">
+              <svg viewBox="0 0 36 36" width="22" height="22" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M4 5H18L24.5 18L18 31H4V5ZM8.5 9.5H16L19 15.5H8.5V9.5ZM8.5 20.5H19L16 26.5H8.5V20.5Z" fill="rgba(0, 242, 254, 0.22)" stroke="#00f2fe" stroke-width="1.6" stroke-linejoin="round"/>
+                <path d="M22 5H25.5L32 18L25.5 31H22L28.5 18L22 5Z" fill="rgba(0, 242, 254, 0.22)" stroke="#00f2fe" stroke-width="1.6" stroke-linejoin="round"/>
+                <circle cx="24.5" cy="18" r="1.2" fill="#ffffff"/>
+                <circle cx="32" cy="18" r="1.2" fill="#00f2fe"/>
+              </svg>
+            </div>
+            <span class="logo-text" style="font-size:20px;">EVO<span>TECH</span></span>
+          </a>
+          <p class="footer-about-text">
+            Empowering businesses with custom software development, modern web applications, creative branding, and data-driven digital engineering.
+          </p>
+          <div class="footer-social-row">
+            <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="footer-title">Services</h3>
+          <ul class="footer-nav-list">
+            <li><a href="services.html#service-web"><i class="fa-solid fa-angles-right"></i> Website Development</a></li>
+            <li><a href="services.html#service-webapp"><i class="fa-solid fa-angles-right"></i> Web Applications</a></li>
+            <li><a href="services.html#service-mobile"><i class="fa-solid fa-angles-right"></i> Mobile Apps</a></li>
+            <li><a href="services.html#service-uiux"><i class="fa-solid fa-angles-right"></i> Graphic &amp; UI/UX Design</a></li>
+            <li><a href="services.html#service-seo"><i class="fa-solid fa-angles-right"></i> Digital Marketing &amp; SEO</a></li>
+            <li><a href="services.html#service-hosting"><i class="fa-solid fa-angles-right"></i> Hosting &amp; Cloud IT</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="footer-title">Quick Links</h3>
+          <ul class="footer-nav-list">
+            <li><a href="about.html"><i class="fa-solid fa-angles-right"></i> About Us</a></li>
+            <li><a href="services.html"><i class="fa-solid fa-angles-right"></i> Services</a></li>
+            <li><a href="projects.html"><i class="fa-solid fa-angles-right"></i> Projects Portfolio</a></li>
+            <li><a href="team.html"><i class="fa-solid fa-angles-right"></i> Our Team</a></li>
+            <li><a href="testimonials.html"><i class="fa-solid fa-angles-right"></i> Testimonials</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-angles-right"></i> Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="footer-title">Contact Us</h3>
+          <ul class="footer-contact-list">
+            <li>
+              <i class="fa-solid fa-location-dot"></i>
+              <div class="info">
+                <h5>Office Location:</h5>
+                <p>Krishnagiri, Tamil Nadu,<br>India - 635001</p>
+              </div>
+            </li>
+            <li>
+              <i class="fa-solid fa-envelope"></i>
+              <div class="info">
+                <h5>Email Address:</h5>
+                <p><a href="mailto:evotech.work@gmail.com">evotech.work@gmail.com</a></p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__copyright">
+      <div class="container footer__copyright-inner">
+        <p>&copy; All Copyright 2026 by <a href="index.html" style="color:var(--white);">EvoTech</a></p>
+        <ul class="footer-policy-links">
+          <li><a href="#0">Terms &amp; Condition</a></li>
+          <li><a href="#0">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Up Button -->
+  <div class="scroll-up">
+    <svg class="scroll-circle" width="100%" height="100%" viewBox="-1 -1 102 102">
+      <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+    </svg>
+    <i class="fa-solid fa-arrow-up"></i>
+  </div>
+
+  <!-- MODAL: GET A QUOTE -->
+  <div class="modal-backdrop" id="quote-modal" role="dialog" aria-modal="true">
+    <div class="modal-card">
+      <button class="modal-close-btn" id="close-quote-modal" aria-label="Close modal">&times;</button>
+      <div class="modal-header">
+        <h3>Get a Free Project Quote</h3>
+        <p>Tell us about your requirements and our team will get back to you with an estimate within 24 hours.</p>
+      </div>
+      <form class="modal-form" id="quote-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="quote-name">Full Name *</label>
+            <input type="text" id="quote-name" required placeholder="e.g. Rahul Sharma">
+          </div>
+          <div class="form-group">
+            <label for="quote-email">Email Address *</label>
+            <input type="email" id="quote-email" required placeholder="e.g. rahul@example.com">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="quote-service">Service Required *</label>
+          <select id="quote-service" required>
+            <option value="">Select a service...</option>
+            <option value="website">Website Development</option>
+            <option value="webapp">Web Application</option>
+            <option value="mobile">Mobile App Development</option>
+            <option value="uiux">Graphic Design &amp; UI/UX</option>
+            <option value="seo">Digital Marketing &amp; SEO</option>
+            <option value="hosting">Hosting &amp; Cloud IT</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="quote-message">Project Overview *</label>
+          <textarea id="quote-message" rows="3" required placeholder="Describe your business goals, required features, and timeline..."></textarea>
+        </div>
+        <div style="margin-top: 10px;">
+          <button type="submit" class="btn-one" style="width: 100%; justify-content: center;">
+            <span>Submit Project Request</span>
+            <i class="fa-regular fa-arrow-right-long"></i>
+          </button>
+        </div>
+      </form>
+      <div class="form-success-msg" id="quote-success-msg" style="display:none; text-align:center; padding:20px 0;">
+        <i class="fa-solid fa-circle-check" style="color:#10b981; font-size:48px; margin-bottom:14px;"></i>
+        <h4 style="font-size:20px; font-weight:700; margin-bottom:8px;">Thank You!</h4>
+        <p style="color:#64748b; font-size:14.5px;">Your quote request has been received. Our team will contact you shortly.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast-notification" id="toast-notify"></div>
+  <script src="script.js"></script>
+</body>
+</html>
