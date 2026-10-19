@@ -19,7 +19,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Inner dot moves instantly
       cursorInner.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
-    });
+
+      // Dynamically detect if cursor is over a dark/black element or section
+      const darkContainer = e.target.closest(
+        '.banner-area, .subpage-hero, .secondary-bg, .testimonial-area, .footer-area, .header-area, .header-top, .sidebar-area, .counter__wrp, .modal-backdrop, .talk-us__item'
+      );
+      if (darkContainer) {
+        cursorOuter.classList.add('cursor-on-dark');
+        cursorInner.classList.add('cursor-on-dark');
+      } else {
+        cursorOuter.classList.remove('cursor-on-dark');
+        cursorInner.classList.remove('cursor-on-dark');
+      }
+    }, { passive: true });
 
     // Smooth lerp animation for outer ring
     function renderCursor() {
@@ -30,17 +42,31 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     requestAnimationFrame(renderCursor);
 
-    // Expand on hover
-    const hoverTargets = document.querySelectorAll('a, button, input, select, textarea, .project-card, .service__item, .offer__item, .team-card, .counter__item, .filter-tab-btn');
-    hoverTargets.forEach(el => {
-      el.addEventListener('mouseenter', () => {
+    // Expand on hover using event delegation (handles present and future dynamic elements)
+    const hoverSelector = 'a, button, input, select, textarea, .project-card, .service__item, .offer__item, .team-card, .counter__item, .filter-tab-btn, .modal-close-btn, .arry-prev, .arry-next, .banner-tab-dot, .banner-arrow-btn';
+
+    document.addEventListener('mouseover', (e) => {
+      if (e.target.closest(hoverSelector)) {
         cursorOuter.classList.add('cursor-hover');
         cursorInner.classList.add('cursor-hover');
-      });
-      el.addEventListener('mouseleave', () => {
+      }
+    });
+
+    document.addEventListener('mouseout', (e) => {
+      if (e.target.closest(hoverSelector)) {
         cursorOuter.classList.remove('cursor-hover');
         cursorInner.classList.remove('cursor-hover');
-      });
+      }
+    });
+
+    // Hide custom cursor when leaving window
+    document.documentElement.addEventListener('mouseleave', () => {
+      cursorOuter.style.opacity = '0';
+      cursorInner.style.opacity = '0';
+    });
+    document.documentElement.addEventListener('mouseenter', () => {
+      cursorOuter.style.opacity = '';
+      cursorInner.style.opacity = '';
     });
   }
 
