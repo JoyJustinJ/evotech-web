@@ -62,6 +62,9 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  max-width: 100vw;
+  width: 100%;
 }
 
 body {
@@ -71,7 +74,10 @@ body {
   line-height: 28px;
   font-weight: 400;
   overflow-x: hidden;
+  max-width: 100vw;
+  width: 100%;
   position: relative;
+  -webkit-text-size-adjust: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -617,29 +623,62 @@ img {
 .header-actions {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
 }
 
 .mobile-menu-btn {
   display: none;
-  font-size: 22px;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: rgba(60, 114, 252, 0.12);
+  border: 1px solid rgba(60, 114, 252, 0.35);
   color: var(--white);
-  padding: 8px 12px;
-  border-radius: 6px;
-  background: rgba(255, 255, 255, 0.08);
+  font-size: 20px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+  outline: none;
+}
+
+.mobile-menu-btn:hover,
+.mobile-menu-btn:focus-visible {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+  box-shadow: 0 4px 15px rgba(60, 114, 252, 0.45);
+  color: var(--white);
 }
 
 @media (max-width: 991px) {
   .header-area {
+    position: fixed;
     top: 0;
-    background: rgba(15, 13, 29, 0.95);
+    left: 0;
+    width: 100%;
+    background: rgba(15, 13, 29, 0.96);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     padding: 10px 0;
+    z-index: 999;
   }
   .main-menu {
     display: none;
   }
   .mobile-menu-btn {
-    display: block;
+    display: flex;
+  }
+  #nav-quote-btn {
+    padding: 10px 20px;
+    font-size: 13.5px;
+  }
+}
+
+@media (max-width: 640px) {
+  #nav-quote-btn {
+    display: none;
   }
 }
 
@@ -649,14 +688,16 @@ img {
   top: 0;
   right: -100%;
   width: 320px;
-  max-width: 85%;
+  max-width: 86%;
   height: 100vh;
+  height: 100dvh;
   background: #0f0d1d;
   z-index: 9999;
-  padding: 30px;
-  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
-  transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 28px 24px;
+  box-shadow: -10px 0 35px rgba(0, 0, 0, 0.6);
+  transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .sidebar-area.open {
@@ -684,10 +725,26 @@ img {
 
 .sidebar-close-btn {
   position: absolute;
-  top: 25px;
-  right: 25px;
+  top: 22px;
+  right: 22px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   color: var(--white);
-  font-size: 24px;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.sidebar-close-btn:hover {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+  transform: rotate(90deg);
 }
 
 .sidebar-menu {
@@ -2408,4 +2465,868 @@ img {
 .toast-notification.show {
   transform: translateX(-50%) translateY(0);
   opacity: 1;
+}
+
+/* ==========================================================================
+   22. MASTER MOBILE & RESPONSIVE DESIGN SYSTEM
+   Universal responsive rules for all viewports (Mobile, Tablet, Desktop)
+   ========================================================================== */
+
+/* --- A. Global & Layout Overrides --- */
+html, body {
+  overflow-x: hidden !important;
+  max-width: 100vw !important;
+  width: 100%;
+}
+
+main {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Modal Action Buttons Row */
+.modal-actions-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+/* --- B. Laptop / Small Desktop (max-width: 1199px) --- */
+@media (max-width: 1199px) {
+  .container {
+    max-width: 960px;
+  }
+
+  .main-menu nav > ul {
+    gap: 20px;
+  }
+
+  .main-menu nav > ul > li > a {
+    font-size: 14px;
+  }
+
+  .banner-title {
+    font-size: 48px;
+  }
+
+  .offer-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .footer__wrp {
+    grid-template-columns: 2fr 1.2fr 1.2fr 1.8fr;
+    gap: 30px;
+  }
+}
+
+/* --- C. Tablet & Smaller (max-width: 991px) --- */
+@media (max-width: 991px) {
+  .container {
+    max-width: 720px;
+    padding: 0 20px;
+  }
+
+  /* Spacings */
+  .pt-120 { padding-top: 75px; }
+  .pb-120 { padding-bottom: 75px; }
+  .pt-100 { padding-top: 65px; }
+  .pb-100 { padding-bottom: 65px; }
+  .mb-60 { margin-bottom: 40px; }
+  .mt-60 { margin-top: 40px; }
+
+  /* Typography */
+  h1 { font-size: 40px; }
+  h2 { font-size: 32px; line-height: 40px; }
+  .section-header h2 { font-size: 32px; line-height: 1.25; }
+
+  /* Header */
+  .header-top {
+    display: none !important;
+  }
+
+  .header-area {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    background: rgba(15, 13, 29, 0.96) !important;
+    backdrop-filter: blur(14px) !important;
+    -webkit-backdrop-filter: blur(14px) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+    padding: 10px 0 !important;
+    z-index: 999 !important;
+  }
+
+  .main-menu {
+    display: none !important;
+  }
+
+  .mobile-menu-btn {
+    display: flex !important;
+  }
+
+  /* Banner Area */
+  .banner-area {
+    min-height: 580px;
+    padding-top: 110px;
+    padding-bottom: 70px;
+  }
+
+  .banner-title {
+    font-size: 38px;
+    line-height: 1.2;
+  }
+
+  .banner-desc {
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
+  /* Subpage Hero */
+  .subpage-hero {
+    padding: 110px 0 50px;
+  }
+
+  .subpage-title {
+    font-size: 32px;
+  }
+
+  /* Counter Area */
+  .counter__wrp {
+    grid-template-columns: repeat(2, 1fr) !important;
+    padding: 30px 24px !important;
+    margin-top: -20px !important;
+    gap: 24px !important;
+  }
+
+  /* About Area */
+  .about-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+
+  .about-img-box img {
+    height: 360px !important;
+  }
+
+  .about-floating-card {
+    right: 15px !important;
+    bottom: -15px !important;
+  }
+
+  /* Services */
+  .service-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 24px !important;
+  }
+
+  /* Process */
+  .process-grid {
+    grid-template-columns: 1fr !important;
+    gap: 35px !important;
+  }
+
+  .process-arrow-line {
+    display: none !important;
+  }
+
+  /* Testimonials & Talk To Us */
+  .testimonial-split-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+
+  /* Team */
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 25px !important;
+  }
+
+  /* Footer */
+  .footer__wrp {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 35px !important;
+  }
+}
+
+/* --- D. Small Tablet & Phablet (max-width: 768px) --- */
+@media (max-width: 768px) {
+  .container {
+    max-width: 540px;
+  }
+
+  /* Spacings */
+  .pt-120 { padding-top: 60px; }
+  .pb-120 { padding-bottom: 60px; }
+  .pt-100 { padding-top: 50px; }
+  .pb-100 { padding-bottom: 50px; }
+  .mb-60 { margin-bottom: 30px; }
+  .mt-60 { margin-top: 30px; }
+
+  /* Typography */
+  h1 { font-size: 34px; }
+  h2 { font-size: 28px; line-height: 36px; }
+  .section-header h2 { font-size: 28px; line-height: 1.25; }
+
+  /* Decorative Animated Shapes (hidden to prevent any horizontal scroll) */
+  .banner__line,
+  .banner__shape-left,
+  .banner__shape-right {
+    display: none !important;
+  }
+
+  /* Projects */
+  .projects-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+
+  /* Service Header Row */
+  .service-header-wrap {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 16px !important;
+    margin-bottom: 35px !important;
+  }
+
+  /* About Features */
+  .about-features-row {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  /* Footer Top CTA */
+  .footer-top-cta {
+    flex-direction: column !important;
+    text-align: center !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 20px !important;
+    padding: 30px 24px !important;
+    margin-bottom: 40px !important;
+  }
+
+  .footer-cta-left h3 {
+    font-size: 24px !important;
+  }
+
+  /* Subpage Hero */
+  .subpage-hero {
+    padding: 100px 0 45px !important;
+  }
+
+  .subpage-title {
+    font-size: 28px !important;
+  }
+
+  .subpage-desc {
+    font-size: 15px !important;
+  }
+}
+
+/* --- E. Standard Mobile Devices (max-width: 575px) --- */
+@media (max-width: 575px) {
+  .container {
+    max-width: 100%;
+    padding: 0 16px !important;
+  }
+
+  /* Spacings */
+  .pt-120 { padding-top: 48px !important; }
+  .pb-120 { padding-bottom: 48px !important; }
+  .pt-100 { padding-top: 40px !important; }
+  .pb-100 { padding-bottom: 40px !important; }
+  .mb-60 { margin-bottom: 24px !important; }
+  .mt-60 { margin-top: 24px !important; }
+
+  /* Typography */
+  h1 { font-size: 28px !important; line-height: 1.25 !important; }
+  h2 { font-size: 24px !important; line-height: 1.28 !important; }
+  h3 { font-size: 20px !important; }
+  p { font-size: 14.5px !important; line-height: 24px !important; }
+
+  .section-header h5 {
+    font-size: 13px !important;
+    letter-spacing: 1px !important;
+    margin-bottom: 8px !important;
+  }
+
+  .section-header h2 {
+    font-size: 24px !important;
+    line-height: 1.3 !important;
+  }
+
+  .section-header p {
+    font-size: 14px !important;
+    line-height: 22px !important;
+    margin-top: 8px !important;
+  }
+
+  /* Header Branding */
+  .logo-badge {
+    width: 38px !important;
+    height: 38px !important;
+    border-radius: 10px !important;
+  }
+
+  .logo-badge svg {
+    width: 22px !important;
+    height: 22px !important;
+  }
+
+  .logo-text {
+    font-size: 19px !important;
+  }
+
+  #nav-quote-btn {
+    display: none !important;
+  }
+
+  /* Banner Hero */
+  .banner-area {
+    min-height: auto !important;
+    padding-top: 92px !important;
+    padding-bottom: 50px !important;
+  }
+
+  .banner-eyebrow {
+    font-size: 11px !important;
+    padding: 5px 12px !important;
+    letter-spacing: 0.8px !important;
+    max-width: 100% !important;
+    white-space: normal !important;
+    text-align: center !important;
+    gap: 8px !important;
+    margin-bottom: 16px !important;
+  }
+
+  .banner-eyebrow svg {
+    width: 24px !important;
+    height: 10px !important;
+  }
+
+  .banner-title {
+    font-size: 28px !important;
+    line-height: 1.25 !important;
+    margin-bottom: 14px !important;
+    letter-spacing: 0 !important;
+  }
+
+  .banner-desc {
+    font-size: 14px !important;
+    line-height: 22px !important;
+    margin-bottom: 24px !important;
+  }
+
+  .banner-cta-group {
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 12px !important;
+  }
+
+  .banner-cta-group .btn-one,
+  .banner-cta-group .btn-outline {
+    width: 100% !important;
+    justify-content: center !important;
+    padding: 13px 20px !important;
+    font-size: 14.5px !important;
+  }
+
+  .banner-carousel-controls {
+    margin-top: 25px !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+  }
+
+  /* Subpage Hero */
+  .subpage-hero {
+    padding: 88px 0 36px !important;
+  }
+
+  .subpage-title {
+    font-size: 24px !important;
+    line-height: 1.25 !important;
+    margin-bottom: 10px !important;
+  }
+
+  .subpage-desc {
+    font-size: 14px !important;
+    line-height: 22px !important;
+  }
+
+  .breadcrumb-nav {
+    font-size: 12.5px !important;
+    margin-bottom: 10px !important;
+  }
+
+  /* Counter Area */
+  .counter-area {
+    margin-top: 15px !important;
+    margin-bottom: 25px !important;
+  }
+
+  .counter__wrp {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+    padding: 24px 18px !important;
+    border-radius: var(--radius-md) !important;
+  }
+
+  .counter__item {
+    gap: 16px !important;
+  }
+
+  .counter__icon-wrap {
+    width: 50px !important;
+    height: 50px !important;
+    font-size: 20px !important;
+    border-radius: 12px !important;
+  }
+
+  .counter__item .content h3 {
+    font-size: 30px !important;
+  }
+
+  .counter__item .content p {
+    font-size: 13.5px !important;
+  }
+
+  /* About Area */
+  .about-img-box img {
+    height: 240px !important;
+  }
+
+  .about-floating-card {
+    position: static !important;
+    margin-top: 16px !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    border-left: 4px solid var(--primary-color) !important;
+    padding: 16px 20px !important;
+    box-shadow: var(--shadow) !important;
+  }
+
+  .about-floating-card .big-num {
+    font-size: 30px !important;
+  }
+
+  .about-floating-card .card-text {
+    font-size: 13.5px !important;
+  }
+
+  .about__right-item {
+    padding: 16px !important;
+    gap: 14px !important;
+  }
+
+  .about__right-item .icon {
+    width: 42px !important;
+    height: 42px !important;
+    font-size: 18px !important;
+  }
+
+  .about__right-item .content h4 {
+    font-size: 16px !important;
+  }
+
+  /* Services */
+  .service-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  .service__item {
+    padding: 26px 20px !important;
+    border-radius: var(--radius-md) !important;
+  }
+
+  .service__icon {
+    width: 56px !important;
+    height: 56px !important;
+    font-size: 24px !important;
+    margin-bottom: 18px !important;
+  }
+
+  .service__item h4 {
+    font-size: 19px !important;
+  }
+
+  .service__item p {
+    font-size: 14px !important;
+    line-height: 22px !important;
+    margin-bottom: 18px !important;
+  }
+
+  .service-header-wrap .btn-one {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  /* Offer Area (3D Rotating Icons) */
+  .offer-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 14px !important;
+  }
+
+  .offer__item {
+    padding: 22px 12px !important;
+    border-radius: var(--radius-sm) !important;
+  }
+
+  .offer__icon {
+    width: 60px !important;
+    height: 60px !important;
+    margin-bottom: 12px !important;
+  }
+
+  .offer__icon svg, .offer__icon i {
+    font-size: 24px !important;
+  }
+
+  .offer__item h4 {
+    font-size: 14px !important;
+    margin-top: 6px !important;
+  }
+
+  /* Work Process */
+  .process__circle {
+    width: 76px !important;
+    height: 76px !important;
+    font-size: 28px !important;
+  }
+
+  .process-number {
+    width: 28px !important;
+    height: 28px !important;
+    font-size: 13px !important;
+  }
+
+  .process__content h4 {
+    font-size: 18px !important;
+  }
+
+  .process__content p {
+    font-size: 14px !important;
+    line-height: 22px !important;
+  }
+
+  /* Featured Projects */
+  .projects-filter-bar {
+    gap: 8px !important;
+    margin-bottom: 24px !important;
+  }
+
+  .filter-tab-btn {
+    padding: 7px 14px !important;
+    font-size: 12.5px !important;
+  }
+
+  .project-info-box {
+    padding: 20px 16px !important;
+  }
+
+  .project-title {
+    font-size: 19px !important;
+  }
+
+  .project-subtitle {
+    font-size: 13.5px !important;
+    margin-bottom: 12px !important;
+  }
+
+  .project-tags-row {
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+    align-items: center !important;
+  }
+
+  .tags-left {
+    gap: 6px !important;
+  }
+
+  .tech-tag {
+    font-size: 11.5px !important;
+    padding: 3px 8px !important;
+  }
+
+  .project-card-arrow {
+    width: 32px !important;
+    height: 32px !important;
+    font-size: 13px !important;
+    margin-left: auto !important;
+  }
+
+  /* Testimonials & Talk To Us */
+  .talk-us__item {
+    padding: 24px 18px !important;
+    border-radius: var(--radius-md) !important;
+  }
+
+  .talk-form-grid {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+    margin-top: 18px !important;
+  }
+
+  .form-field-full,
+  .talk-submit-btn {
+    grid-column: span 1 !important;
+  }
+
+  .talk-form-group label {
+    font-size: 13px !important;
+  }
+
+  .talk-form-group input,
+  .talk-form-group textarea,
+  .talk-form-group select {
+    font-size: 16px !important; /* Prevents iOS Safari auto-zoom on focus */
+    padding: 10px 14px !important;
+  }
+
+  .testimonial__item {
+    padding: 24px 18px !important;
+    border-radius: var(--radius-md) !important;
+  }
+
+  .testimonial__item .coma {
+    width: 30px !important;
+    top: 20px !important;
+    right: 20px !important;
+    opacity: 0.2 !important;
+  }
+
+  .client-avatar-circle {
+    width: 50px !important;
+    height: 50px !important;
+    font-size: 18px !important;
+  }
+
+  .testi-info h4 {
+    font-size: 17px !important;
+  }
+
+  .testi-info .client-title {
+    font-size: 12.5px !important;
+  }
+
+  .testi-quote-text {
+    font-size: 14.5px !important;
+    line-height: 1.65 !important;
+  }
+
+  /* Team Area */
+  .team-grid {
+    grid-template-columns: 1fr !important;
+    max-width: 330px !important;
+    margin: 0 auto !important;
+    gap: 20px !important;
+  }
+
+  .team-card {
+    padding: 25px 18px !important;
+    border-radius: var(--radius-md) !important;
+  }
+
+  .team-avatar-container {
+    width: 110px !important;
+    height: 110px !important;
+    margin-bottom: 16px !important;
+  }
+
+  .team-name {
+    font-size: 18px !important;
+  }
+
+  .team-role {
+    font-size: 13.5px !important;
+    margin-bottom: 14px !important;
+  }
+
+  /* Footer Area */
+  .footer-top-cta {
+    padding: 24px 18px !important;
+    border-radius: var(--radius-md) !important;
+  }
+
+  .footer-cta-left h3 {
+    font-size: 20px !important;
+  }
+
+  .footer-cta-left p {
+    font-size: 13.5px !important;
+  }
+
+  .footer-top-cta .btn-one {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  .footer__wrp {
+    grid-template-columns: 1fr !important;
+    gap: 30px !important;
+    padding-bottom: 40px !important;
+  }
+
+  .footer-about-text {
+    font-size: 14px !important;
+    line-height: 24px !important;
+    margin-bottom: 18px !important;
+  }
+
+  .footer-title {
+    font-size: 18px !important;
+    margin-bottom: 16px !important;
+  }
+
+  .footer-nav-list li a {
+    font-size: 14px !important;
+  }
+
+  .footer-contact-list .info p,
+  .footer-contact-list .info a {
+    font-size: 13.5px !important;
+    word-break: break-word !important;
+  }
+
+  .footer__copyright-inner {
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 12px !important;
+  }
+
+  .footer-policy-links {
+    justify-content: center !important;
+    gap: 16px !important;
+    font-size: 13px !important;
+  }
+
+  /* Modals */
+  .modal-backdrop {
+    padding: 12px !important;
+  }
+
+  .modal-card {
+    padding: 24px 18px !important;
+    border-radius: var(--radius-md) !important;
+    max-width: 96% !important;
+    max-height: 92vh !important;
+  }
+
+  .modal-close-btn {
+    top: 14px !important;
+    right: 14px !important;
+    width: 32px !important;
+    height: 32px !important;
+    font-size: 18px !important;
+  }
+
+  .modal-header h3 {
+    font-size: 20px !important;
+    padding-right: 30px !important;
+  }
+
+  .modal-header p {
+    font-size: 13.5px !important;
+    margin-bottom: 18px !important;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-size: 16px !important; /* Prevents iOS Safari auto-zoom */
+    padding: 10px 12px !important;
+  }
+
+  .modal-actions-row {
+    flex-direction: column-reverse !important;
+    width: 100% !important;
+    gap: 10px !important;
+  }
+
+  .modal-actions-row button,
+  .modal-actions-row .btn-one,
+  .modal-actions-row .btn-outline {
+    width: 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  /* Toast Notification */
+  .toast-notification {
+    width: 90% !important;
+    max-width: 360px !important;
+    text-align: center !important;
+    font-size: 13.5px !important;
+    padding: 12px 20px !important;
+    bottom: 20px !important;
+  }
+
+  /* Scroll Up Button */
+  .scroll-up {
+    bottom: 18px !important;
+    right: 18px !important;
+    width: 42px !important;
+    height: 42px !important;
+  }
+
+  .scroll-up i {
+    font-size: 14px !important;
+  }
+}
+
+/* --- F. Compact Screens (max-width: 380px) --- */
+@media (max-width: 380px) {
+  .logo-text {
+    font-size: 17.5px !important;
+  }
+
+  .logo-badge {
+    width: 34px !important;
+    height: 34px !important;
+  }
+
+  .banner-title {
+    font-size: 24px !important;
+  }
+
+  .offer-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .counter__item .content h3 {
+    font-size: 26px !important;
+  }
+
+  .subpage-title {
+    font-size: 22px !important;
+  }
+}
+
+/* --- G. Touch & Pointer Optimization --- */
+@media (hover: none) and (pointer: coarse) {
+  .mouse-cursor {
+    display: none !important;
+  }
+
+  /* Remove hover transform on touch to prevent sticky hover states */
+  .service__item:hover,
+  .project-card:hover,
+  .team-card:hover,
+  .offer__item:hover {
+    transform: none !important;
+  }
+
+  /* Ensure smooth touch taps */
+  a, button, input, select, textarea {
+    touch-action: manipulation;
+  }
 }

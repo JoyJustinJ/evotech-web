@@ -68,18 +68,27 @@ document.addEventListener('DOMContentLoaded', () => {
   function openSidebar() {
     if (sidebarArea) sidebarArea.classList.add('open');
     if (sidebarOverlay) sidebarOverlay.classList.add('open');
+    if (openButton) openButton.setAttribute('aria-expanded', 'true');
     document.body.style.overflow = 'hidden';
   }
 
   function closeSidebar() {
     if (sidebarArea) sidebarArea.classList.remove('open');
     if (sidebarOverlay) sidebarOverlay.classList.remove('open');
+    if (openButton) openButton.setAttribute('aria-expanded', 'false');
     document.body.style.overflow = '';
   }
 
   if (openButton) openButton.addEventListener('click', openSidebar);
   if (closeButton) closeButton.addEventListener('click', closeSidebar);
   if (sidebarOverlay) sidebarOverlay.addEventListener('click', closeSidebar);
+
+  // Close sidebar drawer when clicking any nav link or quote button inside drawer
+  document.querySelectorAll('.sidebar-menu a, .sidebar-area .open-quote-modal').forEach(link => {
+    link.addEventListener('click', () => {
+      closeSidebar();
+    });
+  });
 
   // --- 4. Back To Top Circular Progress Indicator ---
   const scrollUp = document.querySelector('.scroll-up');
@@ -490,15 +499,23 @@ document.addEventListener('DOMContentLoaded', () => {
             `).join('')}
           </ul>
 
-          <div style="display:flex; gap:12px; justify-content:flex-end;">
+          <div class="modal-actions-row">
             <button class="btn-outline" style="color:#0f0d1d; border-color:#cbd5e1; background:#f8fafc;" onclick="document.getElementById('close-project-modal').click();">Close Preview</button>
-            <button class="btn-one open-quote-modal" onclick="document.getElementById('close-project-modal').click(); setTimeout(() => document.getElementById('nav-quote-btn').click(), 200);">
+            <button class="btn-one" id="modal-start-similar-btn">
               <span>Start Similar Project</span>
               <i class="fa-regular fa-arrow-right-long"></i>
             </button>
           </div>
         </div>
       `;
+
+      const startSimilarBtn = projectModalContent.querySelector('#modal-start-similar-btn');
+      if (startSimilarBtn) {
+        startSimilarBtn.addEventListener('click', () => {
+          closeModal(projectModal);
+          setTimeout(() => openModal(quoteModal), 220);
+        });
+      }
 
       openModal(projectModal);
     });
