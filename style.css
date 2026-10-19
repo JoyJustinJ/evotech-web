@@ -216,33 +216,24 @@ img {
   opacity: 1 !important;
 }
 
-/* Prevent black text-select I-beam from hiding cursor on dark backgrounds */
-.banner-area, .subpage-hero, .secondary-bg, .testimonial-area, .footer-area, .header-area, .header-top {
-  cursor: default;
+/* Prevent black text-select I-beam from hiding cursor on dark backgrounds across all viewports */
+.banner-area, .subpage-hero, .secondary-bg, .testimonial-area, .footer-area, .header-area, .header-top, .sidebar-area, .counter-area {
+  cursor: default !important;
 }
 
-.banner-area h1, .banner-area h2, .banner-area h3, .banner-area p, .banner-area span,
-.subpage-hero h1, .subpage-hero h2, .subpage-hero h3, .subpage-hero p, .subpage-hero span,
-.secondary-bg h1, .secondary-bg h2, .secondary-bg h3, .secondary-bg p, .secondary-bg span,
-.testimonial-area h1, .testimonial-area h2, .testimonial-area h3, .testimonial-area p, .testimonial-area span,
-.footer-area h1, .footer-area h2, .footer-area h3, .footer-area p, .footer-area span {
-  cursor: default;
+.banner-area *, .subpage-hero *, .secondary-bg *, .testimonial-area *, .footer-area *, .header-area *, .header-top *, .sidebar-area *, .counter-area * {
+  cursor: default !important;
 }
 
-.banner-area a, .subpage-hero a, .secondary-bg a, .testimonial-area a, .footer-area a, .header-area a,
-.banner-area button, .subpage-hero button, .secondary-bg button, .testimonial-area button, .footer-area button, .header-area button {
+.banner-area a, .subpage-hero a, .secondary-bg a, .testimonial-area a, .footer-area a, .header-area a, .sidebar-area a,
+.banner-area button, .subpage-hero button, .secondary-bg button, .testimonial-area button, .footer-area button, .header-area button, .sidebar-area button,
+.btn-one, .btn-outline, .filter-tab-btn, .project-card, .service__item, .offer__item, .team-card, .mobile-menu-btn, .sidebar-close-btn, .arry-prev, .arry-next, .banner-arrow-btn, .banner-tab-dot {
   cursor: pointer !important;
 }
 
-.banner-area input, .banner-area textarea, .testimonial-area input, .testimonial-area textarea, .footer-area input {
+.banner-area input, .banner-area textarea, .testimonial-area input, .testimonial-area textarea, .footer-area input, .modal-card input, .modal-card textarea, .modal-card select {
   cursor: text !important;
   caret-color: #00f2fe !important;
-}
-
-@media (max-width: 991px) {
-  .mouse-cursor {
-    display: none !important;
-  }
 }
 
 /* --- 4. Utilities & Helpers --- */
@@ -3374,10 +3365,6 @@ main {
 
 /* --- G. Touch & Pointer Optimization --- */
 @media (hover: none) and (pointer: coarse) {
-  .mouse-cursor {
-    display: none !important;
-  }
-
   /* Remove hover transform on touch to prevent sticky hover states */
   .service__item:hover,
   .project-card:hover,

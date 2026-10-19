@@ -9,27 +9,56 @@ document.addEventListener('DOMContentLoaded', () => {
   const cursorOuter = document.querySelector('.cursor-outer');
   const cursorInner = document.querySelector('.cursor-inner');
 
-  if (cursorOuter && cursorInner && window.innerWidth > 991) {
-    let mouseX = 0, mouseY = 0;
-    let outerX = 0, outerY = 0;
+  if (cursorOuter && cursorInner) {
+    let mouseX = -100, mouseY = -100;
+    let outerX = -100, outerY = -100;
+    let isCursorActive = false;
 
-    window.addEventListener('mousemove', (e) => {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
+    function updateCursorPosition(x, y, target) {
+      mouseX = x;
+      mouseY = y;
+      if (!isCursorActive) {
+        isCursorActive = true;
+        outerX = x;
+        outerY = y;
+        cursorOuter.style.opacity = '1';
+        cursorInner.style.opacity = '1';
+      }
 
       // Inner dot moves instantly
       cursorInner.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
 
       // Dynamically detect if cursor is over a dark/black element or section
-      const darkContainer = e.target.closest(
+      const darkContainer = target && target.closest ? target.closest(
         '.banner-area, .subpage-hero, .secondary-bg, .testimonial-area, .footer-area, .header-area, .header-top, .sidebar-area, .counter__wrp, .modal-backdrop, .talk-us__item'
-      );
+      ) : null;
+
       if (darkContainer) {
         cursorOuter.classList.add('cursor-on-dark');
         cursorInner.classList.add('cursor-on-dark');
       } else {
         cursorOuter.classList.remove('cursor-on-dark');
         cursorInner.classList.remove('cursor-on-dark');
+      }
+    }
+
+    window.addEventListener('mousemove', (e) => {
+      updateCursorPosition(e.clientX, e.clientY, e.target);
+    }, { passive: true });
+
+    window.addEventListener('touchmove', (e) => {
+      if (e.touches && e.touches.length > 0) {
+        const touch = e.touches[0];
+        const target = document.elementFromPoint(touch.clientX, touch.clientY);
+        updateCursorPosition(touch.clientX, touch.clientY, target);
+      }
+    }, { passive: true });
+
+    window.addEventListener('touchstart', (e) => {
+      if (e.touches && e.touches.length > 0) {
+        const touch = e.touches[0];
+        const target = document.elementFromPoint(touch.clientX, touch.clientY);
+        updateCursorPosition(touch.clientX, touch.clientY, target);
       }
     }, { passive: true });
 
