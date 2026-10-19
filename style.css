@@ -236,6 +236,13 @@ img {
   caret-color: #00f2fe !important;
 }
 
+/* Remove custom cursor completely on mobile/tablet viewports */
+@media (max-width: 991px) {
+  .mouse-cursor {
+    display: none !important;
+  }
+}
+
 /* --- 4. Utilities & Helpers --- */
 .container {
   width: 100%;
@@ -3365,6 +3372,11 @@ main {
 
 /* --- G. Touch & Pointer Optimization --- */
 @media (hover: none) and (pointer: coarse) {
+  /* Completely remove custom mouse cursor on touch devices */
+  .mouse-cursor {
+    display: none !important;
+  }
+
   /* Remove hover transform on touch to prevent sticky hover states */
   .service__item:hover,
   .project-card:hover,

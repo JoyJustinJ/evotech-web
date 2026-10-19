@@ -5,22 +5,24 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  // --- 1. Custom Mouse Cursor ---
+  // --- 1. Custom Mouse Cursor (Desktop Only - Completely removed on Mobile/Touch) ---
   const cursorOuter = document.querySelector('.cursor-outer');
   const cursorInner = document.querySelector('.cursor-inner');
 
-  if (cursorOuter && cursorInner) {
+  const isDesktopPointer = window.innerWidth > 991 && !window.matchMedia('(hover: none) and (pointer: coarse)').matches;
+
+  if (cursorOuter && cursorInner && isDesktopPointer) {
     let mouseX = -100, mouseY = -100;
     let outerX = -100, outerY = -100;
     let isCursorActive = false;
 
-    function updateCursorPosition(x, y, target) {
-      mouseX = x;
-      mouseY = y;
+    window.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
       if (!isCursorActive) {
         isCursorActive = true;
-        outerX = x;
-        outerY = y;
+        outerX = mouseX;
+        outerY = mouseY;
         cursorOuter.style.opacity = '1';
         cursorInner.style.opacity = '1';
       }
@@ -29,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
       cursorInner.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
 
       // Dynamically detect if cursor is over a dark/black element or section
-      const darkContainer = target && target.closest ? target.closest(
+      const darkContainer = e.target && e.target.closest ? e.target.closest(
         '.banner-area, .subpage-hero, .secondary-bg, .testimonial-area, .footer-area, .header-area, .header-top, .sidebar-area, .counter__wrp, .modal-backdrop, .talk-us__item'
       ) : null;
 
@@ -39,26 +41,6 @@ document.addEventListener('DOMContentLoaded', () => {
       } else {
         cursorOuter.classList.remove('cursor-on-dark');
         cursorInner.classList.remove('cursor-on-dark');
-      }
-    }
-
-    window.addEventListener('mousemove', (e) => {
-      updateCursorPosition(e.clientX, e.clientY, e.target);
-    }, { passive: true });
-
-    window.addEventListener('touchmove', (e) => {
-      if (e.touches && e.touches.length > 0) {
-        const touch = e.touches[0];
-        const target = document.elementFromPoint(touch.clientX, touch.clientY);
-        updateCursorPosition(touch.clientX, touch.clientY, target);
-      }
-    }, { passive: true });
-
-    window.addEventListener('touchstart', (e) => {
-      if (e.touches && e.touches.length > 0) {
-        const touch = e.touches[0];
-        const target = document.elementFromPoint(touch.clientX, touch.clientY);
-        updateCursorPosition(touch.clientX, touch.clientY, target);
       }
     }, { passive: true });
 
@@ -97,6 +79,10 @@ document.addEventListener('DOMContentLoaded', () => {
       cursorOuter.style.opacity = '';
       cursorInner.style.opacity = '';
     });
+  } else if (cursorOuter && cursorInner) {
+    // Completely remove custom cursor on mobile / touch viewports
+    cursorOuter.remove();
+    cursorInner.remove();
   }
 
   // --- 2. Fixed Header On Scroll ---
